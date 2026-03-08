@@ -184,3 +184,47 @@ A clear set of states where focused government intervention would have the highe
 - **Libraries:** Pandas, NumPy, Matplotlib  
 - **Outputs:** Power BI–ready CSV files  
 - **Reproducibility:** Fully scripted and repeatable, with no manual steps  
+
+---
+
+## Streamlit Dashboard (Premium UI + Real-Time AI Insights)
+
+An interactive Streamlit dashboard is included in `app.py` with notebook-aligned analytics:
+- Child vs Adult updates (top states)
+- Top/Bottom states by total updates
+- States vs UT comparison
+- Top/Bottom district hotspots
+- Monthly and weekday trends
+- Near-zero activity states
+- Rolling anomaly detection
+- Priority state ranking for government focus
+
+### Run Locally
+
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+### Data Input
+
+Dashboard supports:
+- **Demo data mode** (instant visuals without CSV)
+- **Upload CSV mode** for your UIDAI cleaned dataset
+
+Required columns (or close aliases handled automatically):
+- `date`
+- `state`
+- `district`
+- `pincode`
+- `bio_age_5_17`
+- `bio_age_17_`
+
+### AI Insight API
+
+API config is supported via Streamlit secrets in `.streamlit/secrets.toml`:
+- `AISTAL_API_KEY`
+- `AISTAL_API_ENDPOINT`
+- `AISTAL_MODEL`
+
+Use the **Generate Real-Time Insights** button in the app to get policy-ready AI insights from current dashboard filters.
